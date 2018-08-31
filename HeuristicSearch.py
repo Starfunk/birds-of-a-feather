@@ -5,8 +5,7 @@ from Card import STR_CARD_DICT
 import numpy as np
 from sympy import *
 
-
-def test():
+def heuristic_search():
 	#Both odd bird unsolvable deals and separated flocks are lumped into one group
     OBUD_SFUD = []
     #Full-flock unsolvable deal are stored here
@@ -45,7 +44,6 @@ def test():
                     a[i,j] = 1
                     a[j,i] = 1
  
-        
         #Contruct the degree matrix
         d = np.zeros((16,16))
         sum_ = a.sum(axis=1)
@@ -63,7 +61,7 @@ def test():
         #determinant of the reduced laplacian matrix
         cofactor = reduced_laplace.det()
    
-		#Finding number of zeros in the squared adjacency matrix
+	#Finding number of zeros in the squared adjacency matrix
         a_square = np.matmul(a,a)
         zero = 0
         for i in range(16):
@@ -91,7 +89,6 @@ def test():
         avg_determinant = avg_determinant + abs(det)
         avg_zeros = avg_zeros + abs(zero)
         
-   
     avg_pair_count = avg_pair_count / num_seeds
     avg_determinant = avg_determinant / num_seeds
     avg_zeros = avg_zeros / num_seeds
@@ -106,6 +103,5 @@ def test():
     print("The average determinant is: " + str(avg_determinant))
     print("The average zeros is: " + str(avg_zeros))
 
-
 if __name__ == '__main__':
-    test()
+    heuristic_search()
