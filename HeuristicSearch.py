@@ -93,6 +93,7 @@ def heuristic_search():
     avg_determinant = avg_determinant / num_seeds
     avg_zeros = avg_zeros / num_seeds
     
+    print("---------------Scan Completed---------------")
     print()
     print("The number of OBUDs and SFUDs is: " + str(len(OBUD_SFUD)))
     print(OBUD_SFUD)
