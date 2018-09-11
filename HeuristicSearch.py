@@ -6,7 +6,7 @@ import numpy as np
 from sympy import *
 
 def heuristic_search():
-	#Both odd bird unsolvable deals and separated flocks are lumped into one group
+    #Both odd bird unsolvable deals and separated flocks are lumped into one group
     OBUD_SFUD = []
     #Full-flock unsolvable deal are stored here
     FFUD = []
@@ -30,7 +30,7 @@ def heuristic_search():
         found_pair = False
         pair_count = 0;
 
-		#Fill the 16x16 adjacency matrix
+	#Fill the 16x16 adjacency matrix
         for i in range(num_cards - 1):
             for j in range(i + 1, num_cards):
                 card1 = card_list[i]
